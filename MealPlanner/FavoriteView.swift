@@ -54,17 +54,14 @@ struct FavoriteView: View {
     var body: some View {
         NavigationView {
             VStack {
-                // Display all categories as clickable folders
                 List(categories) { category in
                     NavigationLink(destination: CategoryDetailView(category: category)) {
                         HStack {
                             Text(category.name)
                                 .font(.headline)
                             Spacer()
-                            Image(systemName: "folder.fill")
                         }
                         .padding()
-                        .background(Color.blue.opacity(0.1))
                         .cornerRadius(8)
                     }
                 }
@@ -80,24 +77,18 @@ struct CategoryDetailView: View {
     
     var body: some View {
         VStack {
-            // Display the category name
             Text(category.name)
                 .font(.title)
                 .fontWeight(.bold)
-                .padding()
-
-            // Display recipes within the selected category
-            List(category.recipes) { recipe in
-                Text(recipe.name)
-            }
+//                .padding()
+            
+                List(category.recipes) { recipe in
+                        Text(recipe.name)
+                }
 
             Spacer()
         }
-        .navigationTitle(category.name)
-        .navigationBarItems(leading: Button("Back") {
-            // This back button will automatically navigate back to the previous view (Categories)
-        })
-        .padding()
+
     }
 }
 
