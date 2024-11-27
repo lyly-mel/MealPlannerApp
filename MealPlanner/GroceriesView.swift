@@ -19,6 +19,7 @@ struct GroceriesView: View {
     @State private var selectedCategory = "Produce"
     @State private var categories = ["Produce", "Meat", "Baking"]
     @State private var filter: FilterOption = .all // State to control filtering
+    @State private var showingAlert = false // State to control the alert
     
     enum FilterOption {
         case all, completed, toBuy
@@ -106,13 +107,23 @@ struct GroceriesView: View {
                         Button("Show To-Buy Items", action: { filter = .toBuy })
                         Button("Show Completed Items", action: { filter = .completed })
                         Button("Show All Items", action: { filter = .all })
-                        Button("Clear All Items", action: clearList)
+                        Button("Clear All Items", action: { showingAlert = true })
                     } label: {
                         Image(systemName: "ellipsis")
                             .font(.title2)
                             .foregroundColor(.green)
                     }
                 }
+            }
+            .alert(isPresented: $showingAlert) {
+                Alert(
+                    title: Text("Are you sure?"),
+                    message: Text("This will delete all items in your grocery list."),
+                    primaryButton: .destructive(Text("Delete")) {
+                        clearList()
+                    },
+                    secondaryButton: .cancel()
+                )
             }
         }
     }
