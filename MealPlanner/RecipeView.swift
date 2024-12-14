@@ -143,6 +143,8 @@ struct IngredientsView: View {
 }
 
 
+
+
 // PreparationStepsView - Displays the preparation steps of the recipe
 struct PreparationStepsView: View {
     let recipe: PersonalRecipe

@@ -23,6 +23,7 @@
 		A193AA182CF5D0F100CBBF3A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA172CF5D0F100CBBF3A /* SettingsView.swift */; };
 		A195678D2D0DB7C400529F15 /* RecipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195678C2D0DB7C400529F15 /* RecipeManager.swift */; };
 		A19567952D0DEFD500529F15 /* MealPlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19567942D0DEFD500529F15 /* MealPlannerView.swift */; };
+		A19567982D0E25AA00529F15 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A19567972D0E25AA00529F15 /* FSCalendar */; };
 		A198F2872CF827100087D687 /* CreateRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A198F2862CF827100087D687 /* CreateRecipeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A19567982D0E25AA00529F15 /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +152,9 @@
 				Base,
 			);
 			mainGroup = A123C1012CF4648C006BCD96;
+			packageReferences = (
+				A19567962D0E25AA00529F15 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+			);
 			productRefGroup = A123C10B2CF4648C006BCD96 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -394,6 +399,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A19567962D0E25AA00529F15 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A19567972D0E25AA00529F15 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A19567962D0E25AA00529F15 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A181ECF12D0C38070070AD07 /* PersonalRecipeModel.xcdatamodeld */ = {
