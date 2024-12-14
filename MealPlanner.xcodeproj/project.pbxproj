@@ -11,10 +11,17 @@
 		A123C1102CF4648C006BCD96 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A123C10F2CF4648C006BCD96 /* ContentView.swift */; };
 		A123C1122CF4648D006BCD96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A123C1112CF4648D006BCD96 /* Assets.xcassets */; };
 		A123C1152CF4648D006BCD96 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A123C1142CF4648D006BCD96 /* Preview Assets.xcassets */; };
-		A193A9FE2CF46ED300CBBF3A /* MealCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193A9FD2CF46ED300CBBF3A /* MealCalendarView.swift */; };
+		A181ECED2D0934D20070AD07 /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A181ECEC2D0934D20070AD07 /* RecipeListView.swift */; };
+		A181ECF32D0C38070070AD07 /* PersonalRecipeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A181ECF12D0C38070070AD07 /* PersonalRecipeModel.xcdatamodeld */; };
 		A193AA022CF532AC00CBBF3A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA012CF532AC00CBBF3A /* WelcomeView.swift */; };
 		A193AA082CF5743200CBBF3A /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA072CF5743200CBBF3A /* SplashScreenView.swift */; };
-		A193AA0B2CF5897200CBBF3A /* MainPlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA0A2CF5897200CBBF3A /* MainPlannerView.swift */; };
+		A193AA0B2CF5897200CBBF3A /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA0A2CF5897200CBBF3A /* MainTabView.swift */; };
+		A193AA0E2CF5CD0A00CBBF3A /* MealPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA0D2CF5CD0A00CBBF3A /* MealPlanView.swift */; };
+		A193AA122CF5CFBD00CBBF3A /* GroceriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA112CF5CFBD00CBBF3A /* GroceriesView.swift */; };
+		A193AA142CF5D05C00CBBF3A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA132CF5D05C00CBBF3A /* CalendarView.swift */; };
+		A193AA162CF5D0BD00CBBF3A /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA152CF5D0BD00CBBF3A /* FavoriteView.swift */; };
+		A193AA182CF5D0F100CBBF3A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA172CF5D0F100CBBF3A /* SettingsView.swift */; };
+		A198F2872CF827100087D687 /* CreateRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A198F2862CF827100087D687 /* CreateRecipeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,10 +30,17 @@
 		A123C10F2CF4648C006BCD96 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A123C1112CF4648D006BCD96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A123C1142CF4648D006BCD96 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A193A9FD2CF46ED300CBBF3A /* MealCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCalendarView.swift; sourceTree = "<group>"; };
+		A181ECEC2D0934D20070AD07 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
+		A181ECF22D0C38070070AD07 /* PersonalRecipeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersonalRecipeModel.xcdatamodel; sourceTree = "<group>"; };
 		A193AA012CF532AC00CBBF3A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		A193AA072CF5743200CBBF3A /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
-		A193AA0A2CF5897200CBBF3A /* MainPlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlannerView.swift; sourceTree = "<group>"; };
+		A193AA0A2CF5897200CBBF3A /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		A193AA0D2CF5CD0A00CBBF3A /* MealPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanView.swift; sourceTree = "<group>"; };
+		A193AA112CF5CFBD00CBBF3A /* GroceriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesView.swift; sourceTree = "<group>"; };
+		A193AA132CF5D05C00CBBF3A /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		A193AA152CF5D0BD00CBBF3A /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		A193AA172CF5D0F100CBBF3A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A198F2862CF827100087D687 /* CreateRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +74,18 @@
 			isa = PBXGroup;
 			children = (
 				A123C10D2CF4648C006BCD96 /* MealPlannerApp.swift */,
+				A181ECF12D0C38070070AD07 /* PersonalRecipeModel.xcdatamodeld */,
 				A123C10F2CF4648C006BCD96 /* ContentView.swift */,
-				A193A9FD2CF46ED300CBBF3A /* MealCalendarView.swift */,
 				A193AA012CF532AC00CBBF3A /* WelcomeView.swift */,
 				A193AA072CF5743200CBBF3A /* SplashScreenView.swift */,
-				A193AA0A2CF5897200CBBF3A /* MainPlannerView.swift */,
+				A193AA0D2CF5CD0A00CBBF3A /* MealPlanView.swift */,
+				A193AA0A2CF5897200CBBF3A /* MainTabView.swift */,
+				A193AA112CF5CFBD00CBBF3A /* GroceriesView.swift */,
+				A193AA132CF5D05C00CBBF3A /* CalendarView.swift */,
+				A193AA152CF5D0BD00CBBF3A /* FavoriteView.swift */,
+				A198F2862CF827100087D687 /* CreateRecipeView.swift */,
+				A193AA172CF5D0F100CBBF3A /* SettingsView.swift */,
+				A181ECEC2D0934D20070AD07 /* RecipeListView.swift */,
 				A123C1112CF4648D006BCD96 /* Assets.xcassets */,
 				A123C1132CF4648D006BCD96 /* Preview Content */,
 			);
@@ -149,12 +170,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A193AA122CF5CFBD00CBBF3A /* GroceriesView.swift in Sources */,
+				A181ECF32D0C38070070AD07 /* PersonalRecipeModel.xcdatamodeld in Sources */,
 				A193AA022CF532AC00CBBF3A /* WelcomeView.swift in Sources */,
+				A193AA142CF5D05C00CBBF3A /* CalendarView.swift in Sources */,
 				A123C1102CF4648C006BCD96 /* ContentView.swift in Sources */,
-				A193AA0B2CF5897200CBBF3A /* MainPlannerView.swift in Sources */,
-				A193A9FE2CF46ED300CBBF3A /* MealCalendarView.swift in Sources */,
+				A198F2872CF827100087D687 /* CreateRecipeView.swift in Sources */,
+				A193AA0B2CF5897200CBBF3A /* MainTabView.swift in Sources */,
+				A193AA182CF5D0F100CBBF3A /* SettingsView.swift in Sources */,
 				A123C10E2CF4648C006BCD96 /* MealPlannerApp.swift in Sources */,
+				A181ECED2D0934D20070AD07 /* RecipeListView.swift in Sources */,
 				A193AA082CF5743200CBBF3A /* SplashScreenView.swift in Sources */,
+				A193AA162CF5D0BD00CBBF3A /* FavoriteView.swift in Sources */,
+				A193AA0E2CF5CD0A00CBBF3A /* MealPlanView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +386,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A181ECF12D0C38070070AD07 /* PersonalRecipeModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A181ECF22D0C38070070AD07 /* PersonalRecipeModel.xcdatamodel */,
+			);
+			currentVersion = A181ECF22D0C38070070AD07 /* PersonalRecipeModel.xcdatamodel */;
+			name = PersonalRecipeModel.xcdatamodeld;
+			path = /Users/lyliamelahi/Documents/MealPlanner/MealPlanner/PersonalRecipeModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A123C1022CF4648C006BCD96 /* Project object */;
 }

@@ -29,11 +29,11 @@ struct WelcomeView: View {
                         .multilineTextAlignment(.center)
                         .padding(.horizontal)
                         .padding(.bottom, 30)
-
+//
                     Spacer()
                     
                   
-                    NavigationLink(destination: MainPlannerView()) {
+                    NavigationLink(destination: MainTabView()) {
                         Text("Get Started")
                             .font(.headline)
                             .fontWeight(.bold)
@@ -73,3 +73,6 @@ struct WelcomeView_Previews: PreviewProvider {
         WelcomeView()
     }
 }
+
+
+
