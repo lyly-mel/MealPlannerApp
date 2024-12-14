@@ -29,10 +29,8 @@ struct WelcomeView: View {
                         .multilineTextAlignment(.center)
                         .padding(.horizontal)
                         .padding(.bottom, 30)
-//
                     Spacer()
-                    
-                  
+            
                     NavigationLink(destination: MainTabView()) {
                         Text("Get Started")
                             .font(.headline)
