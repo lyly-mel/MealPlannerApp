@@ -66,10 +66,14 @@ struct CategoryDetailView: View {
                             Button("Edit Recipe") {
                                 editRecipe(recipe)
                             }
+                            Button("Add to Favorite") {
+                                addToFavorite(recipe)
+                            }
                             Button("Delete Recipe", role: .destructive) {
                                 recipeToDelete = recipe
                                 showAlert = true
                             }
+                           
                         } label: {
                             Image(systemName: "ellipsis")
                                 .rotationEffect(.degrees(90))
@@ -105,6 +109,11 @@ struct CategoryDetailView: View {
     private func editRecipe(_ recipe: PersonalRecipe) {
         // TO DO: Add logic for editing recipe
         print("Editing recipe: \(recipe.name ?? "Untitled")")
+    }
+    
+    private func addToFavorite(_ recipe: PersonalRecipe) {
+        //TO DO: implement add to favorite
+        print("adding to favorite: \(recipe.name ?? "Unititled")")
     }
 
     private func deleteRecipe(_ recipe: PersonalRecipe) {

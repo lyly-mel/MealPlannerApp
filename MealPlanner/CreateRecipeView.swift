@@ -186,7 +186,7 @@ import CoreData
 
 struct CreateRecipeView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @State private var recipeName: String = ""
     @State private var ingredients: [(name: String, quantity: String, unit: String)] = []
     @State private var ingredientName: String = ""
@@ -292,7 +292,9 @@ struct CreateRecipeView: View {
                     .padding(.top)
                     .alert(isPresented: $showAlert) {
                         Alert(title: Text("Recipe Saved"), message: Text("Your recipe '\(recipeName)' has been saved successfully."), dismissButton: .default(Text("OK")))
+                                                    
                     }
+                    
                 }
                 .padding()
             }

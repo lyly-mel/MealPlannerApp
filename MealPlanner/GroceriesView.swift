@@ -234,8 +234,8 @@ struct GroceriesView: View {
     @State private var newItemName = ""
     @State private var selectedCategory = "Produce"
     @State private var categories = ["Produce", "Meat", "Baking"]
-    @State private var filter: FilterOption = .all // State to control filtering
-    @State private var showingAlert = false // State to control the alert
+    @State private var filter: FilterOption = .all 
+    @State private var showingAlert = false
     
     enum FilterOption {
         case all, completed, toBuy
@@ -295,7 +295,7 @@ struct GroceriesView: View {
                         Image(systemName: "ellipsis")
                             .font(.title2)
                             .foregroundColor(.green)
-                    }
+                        }
                 }
             }
             .alert(isPresented: $showingAlert) {

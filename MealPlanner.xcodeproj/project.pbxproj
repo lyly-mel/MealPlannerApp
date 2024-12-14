@@ -16,12 +16,13 @@
 		A193AA022CF532AC00CBBF3A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA012CF532AC00CBBF3A /* WelcomeView.swift */; };
 		A193AA082CF5743200CBBF3A /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA072CF5743200CBBF3A /* SplashScreenView.swift */; };
 		A193AA0B2CF5897200CBBF3A /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA0A2CF5897200CBBF3A /* MainTabView.swift */; };
-		A193AA0E2CF5CD0A00CBBF3A /* MealPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA0D2CF5CD0A00CBBF3A /* MealPlanView.swift */; };
+		A193AA0E2CF5CD0A00CBBF3A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA0D2CF5CD0A00CBBF3A /* HomeView.swift */; };
 		A193AA122CF5CFBD00CBBF3A /* GroceriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA112CF5CFBD00CBBF3A /* GroceriesView.swift */; };
 		A193AA142CF5D05C00CBBF3A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA132CF5D05C00CBBF3A /* CalendarView.swift */; };
 		A193AA162CF5D0BD00CBBF3A /* RecipesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA152CF5D0BD00CBBF3A /* RecipesListView.swift */; };
 		A193AA182CF5D0F100CBBF3A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193AA172CF5D0F100CBBF3A /* SettingsView.swift */; };
 		A195678D2D0DB7C400529F15 /* RecipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195678C2D0DB7C400529F15 /* RecipeManager.swift */; };
+		A19567952D0DEFD500529F15 /* MealPlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19567942D0DEFD500529F15 /* MealPlannerView.swift */; };
 		A198F2872CF827100087D687 /* CreateRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A198F2862CF827100087D687 /* CreateRecipeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,12 +37,13 @@
 		A193AA012CF532AC00CBBF3A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		A193AA072CF5743200CBBF3A /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		A193AA0A2CF5897200CBBF3A /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		A193AA0D2CF5CD0A00CBBF3A /* MealPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanView.swift; sourceTree = "<group>"; };
+		A193AA0D2CF5CD0A00CBBF3A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A193AA112CF5CFBD00CBBF3A /* GroceriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesView.swift; sourceTree = "<group>"; };
 		A193AA132CF5D05C00CBBF3A /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		A193AA152CF5D0BD00CBBF3A /* RecipesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListView.swift; sourceTree = "<group>"; };
 		A193AA172CF5D0F100CBBF3A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A195678C2D0DB7C400529F15 /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
+		A19567942D0DEFD500529F15 /* MealPlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerView.swift; sourceTree = "<group>"; };
 		A198F2862CF827100087D687 /* CreateRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +83,7 @@
 				A193AA072CF5743200CBBF3A /* SplashScreenView.swift */,
 				A123C10F2CF4648C006BCD96 /* ContentView.swift */,
 				A193AA012CF532AC00CBBF3A /* WelcomeView.swift */,
-				A193AA0D2CF5CD0A00CBBF3A /* MealPlanView.swift */,
+				A193AA0D2CF5CD0A00CBBF3A /* HomeView.swift */,
 				A193AA0A2CF5897200CBBF3A /* MainTabView.swift */,
 				A193AA112CF5CFBD00CBBF3A /* GroceriesView.swift */,
 				A193AA132CF5D05C00CBBF3A /* CalendarView.swift */,
@@ -89,6 +91,7 @@
 				A198F2862CF827100087D687 /* CreateRecipeView.swift */,
 				A193AA172CF5D0F100CBBF3A /* SettingsView.swift */,
 				A181ECEC2D0934D20070AD07 /* RecipeView.swift */,
+				A19567942D0DEFD500529F15 /* MealPlannerView.swift */,
 				A123C1112CF4648D006BCD96 /* Assets.xcassets */,
 				A123C1132CF4648D006BCD96 /* Preview Content */,
 			);
@@ -186,7 +189,8 @@
 				A193AA082CF5743200CBBF3A /* SplashScreenView.swift in Sources */,
 				A195678D2D0DB7C400529F15 /* RecipeManager.swift in Sources */,
 				A193AA162CF5D0BD00CBBF3A /* RecipesListView.swift in Sources */,
-				A193AA0E2CF5CD0A00CBBF3A /* MealPlanView.swift in Sources */,
+				A193AA0E2CF5CD0A00CBBF3A /* HomeView.swift in Sources */,
+				A19567952D0DEFD500529F15 /* MealPlannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

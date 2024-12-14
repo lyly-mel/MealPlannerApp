@@ -6,7 +6,7 @@ struct MainTabView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             // Meal Plan Tab
-            MealPlanView()
+            HomeView()
                 .tabItem {
                     Image(systemName: "fork.knife")
                     Text("Meal Plan")
