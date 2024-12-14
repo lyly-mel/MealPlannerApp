@@ -13,6 +13,14 @@ struct MainTabView: View {
                 }
                 .tag(0)
             
+            // Calendar Tab
+            CalendarView()
+                .tabItem {
+                    Image(systemName: "calendar")
+                    Text("Planner")
+                }
+                .tag(2)
+            
             // Groceries Tab
             GroceriesView()
                 .badge(1)
@@ -22,19 +30,11 @@ struct MainTabView: View {
                 }
                 .tag(1)
             
-            // Calendar Tab
-            CalendarView()
+            // Recipes Tab
+            RecipesListView()
                 .tabItem {
-                    Image(systemName: "calendar")
-                    Text("Calendar")
-                }
-                .tag(2)
-            
-            // Favorite Tab
-            FavoriteView()
-                .tabItem {
-                    Image(systemName: "heart.fill")
-                    Text("Favorite")
+                    Image(systemName: "frying.pan")
+                    Text("My Recipes")
                 }
                 .tag(3)
             
