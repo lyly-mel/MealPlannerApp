@@ -43,6 +43,8 @@ struct RecipesListView: View {
 struct CategoryDetailView: View {
     let categoryName: String
     @State private var recipes: [PersonalRecipe] = []
+    @State private var showAlert = false
+    @State private var recipeToDelete: PersonalRecipe?
 
     var body: some View {
         VStack {
@@ -65,7 +67,8 @@ struct CategoryDetailView: View {
                                 editRecipe(recipe)
                             }
                             Button("Delete Recipe", role: .destructive) {
-                                deleteRecipe(recipe)
+                                recipeToDelete = recipe
+                                showAlert = true
                             }
                         } label: {
                             Image(systemName: "ellipsis")
@@ -78,7 +81,18 @@ struct CategoryDetailView: View {
             .onAppear {
                 fetchRecipes()
             }
-
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("Delete Recipe"),
+                    message: Text("Are you sure you want to delete this recipe?"),
+                    primaryButton: .destructive(Text("Delete")) {
+                        if let recipe = recipeToDelete {
+                            deleteRecipe(recipe)
+                        }
+                    },
+                    secondaryButton: .cancel()
+                )
+            }
 
             Spacer()
         }
@@ -89,7 +103,7 @@ struct CategoryDetailView: View {
     }
     
     private func editRecipe(_ recipe: PersonalRecipe) {
-        //TO DO: add logic for editing recipe
+        // TO DO: Add logic for editing recipe
         print("Editing recipe: \(recipe.name ?? "Untitled")")
     }
 
@@ -98,8 +112,8 @@ struct CategoryDetailView: View {
         recipes.remove(at: index)
         RecipeManager.shared.deleteRecipe(recipe)
     }
-           
 }
+
 
 struct RecipesListView_Previews: PreviewProvider {
     static var previews: some View {
