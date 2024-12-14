@@ -192,14 +192,14 @@ struct CreateRecipeView: View {
     @State private var ingredientName: String = ""
     @State private var ingredientQuantity: String = ""
     @State private var preparationSteps: String = ""
-    @State private var selectedCategory: String = ""
+    @State private var selectedCategory: String = "Breakfast"
     @State private var showAlert: Bool = false
     @State private var selectedUnit = "unit"
-    @State private var units = ["unit", "bag", "gram", "kilogram", "block", "bottle", "box", "can", "cup",
+    @State private var units = ["unit", "bag", "gram", "kilogram","liter", "block", "bottle", "box", "can", "cup",
                                 "gallon", "jar", "ounce", "package", "pint", "pound", "quart"]
     
     // Categories for the picker
-    let categories = ["Breakfast", "Lunch", "Dinner", "Snack", "Dessert"]
+    let categories = ["Breakfast", "Lunch", "Dinner", "Dessert", "Drink", "Cake", "Other"]
 
     var body: some View {
         NavigationView {
@@ -269,7 +269,7 @@ struct CreateRecipeView: View {
                     Text("Category")
                         .font(.headline)
                     Picker("Select a category", selection: $selectedCategory) {
-                        Text("None").tag("")
+                        //Text("Breakfast").tag("")
                         ForEach(categories, id: \.self) { category in
                             Text(category).tag(category)
                         }
@@ -317,6 +317,8 @@ struct CreateRecipeView: View {
             selectedUnit = "qt"
         case "pound":
             selectedUnit = "lb"
+        case "liter":
+            selectedUnit = "l"
         default:
             selectedUnit = selectedUnit
         }
