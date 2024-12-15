@@ -25,6 +25,7 @@
 		A19567952D0DEFD500529F15 /* MealPlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19567942D0DEFD500529F15 /* MealPlannerView.swift */; };
 		A19567982D0E25AA00529F15 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A19567972D0E25AA00529F15 /* FSCalendar */; };
 		A195679A2D0F06DA00529F15 /* PlanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19567992D0F06DA00529F15 /* PlanManager.swift */; };
+		A195679C2D0F23B500529F15 /* CustomCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195679B2D0F23B500529F15 /* CustomCalendarView.swift */; };
 		A198F2872CF827100087D687 /* CreateRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A198F2862CF827100087D687 /* CreateRecipeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		A195678C2D0DB7C400529F15 /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
 		A19567942D0DEFD500529F15 /* MealPlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerView.swift; sourceTree = "<group>"; };
 		A19567992D0F06DA00529F15 /* PlanManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanManager.swift; sourceTree = "<group>"; };
+		A195679B2D0F23B500529F15 /* CustomCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarView.swift; sourceTree = "<group>"; };
 		A198F2862CF827100087D687 /* CreateRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				A19567992D0F06DA00529F15 /* PlanManager.swift */,
 				A195678C2D0DB7C400529F15 /* RecipeManager.swift */,
 				A181ECF12D0C38070070AD07 /* PersonalRecipeModel.xcdatamodeld */,
+				A195679B2D0F23B500529F15 /* CustomCalendarView.swift */,
 				A123C10D2CF4648C006BCD96 /* MealPlannerApp.swift */,
 				A193AA072CF5743200CBBF3A /* SplashScreenView.swift */,
 				A123C10F2CF4648C006BCD96 /* ContentView.swift */,
@@ -188,6 +191,7 @@
 				A181ECF32D0C38070070AD07 /* PersonalRecipeModel.xcdatamodeld in Sources */,
 				A195679A2D0F06DA00529F15 /* PlanManager.swift in Sources */,
 				A193AA022CF532AC00CBBF3A /* WelcomeView.swift in Sources */,
+				A195679C2D0F23B500529F15 /* CustomCalendarView.swift in Sources */,
 				A193AA142CF5D05C00CBBF3A /* CalendarView.swift in Sources */,
 				A123C1102CF4648C006BCD96 /* ContentView.swift in Sources */,
 				A198F2872CF827100087D687 /* CreateRecipeView.swift in Sources */,
