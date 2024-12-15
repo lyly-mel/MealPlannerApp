@@ -4,28 +4,47 @@ import CoreData
 
 struct RecipesListView: View {
     let categories = ["Breakfast", "Lunch", "Dinner", "Dessert", "Drinks", "Cakes", "Others"]
-
+    let diverseCategories = ["Favorites", "All Recipes", "Cooked"]
+    
     var body: some View {
         NavigationView {
-            VStack {
-                List(categories, id: \.self) { category in
-                    NavigationLink(destination: CategoryDetailView(categoryName: category)) {
-                        HStack {
-                            Text(category)
-                                .font(.headline)
-                            Spacer()
-                            Image(systemName: symbolForCategory(category))
-                                .foregroundColor(.gray)
+            List {
+                // Diverse Categories
+                Section(header: Text("Diverse Categories").font(.headline)) {
+                    ForEach(diverseCategories, id: \.self) { diverseCategory in
+                        NavigationLink(destination: CategoryDetailView(categoryName: diverseCategory)) {
+                            HStack {
+                                Text(diverseCategory)
+                                    .font(.headline)
+                                Spacer()
+                                Image(systemName: symbolForCategory(diverseCategory))
+                                    .foregroundColor(.gray)
+                            }
+                            .padding()
                         }
-                        .padding()
-                        .cornerRadius(8)
                     }
                 }
-                .navigationTitle("Personal Recipes")
+                
+                // Meal Categories
+                Section(header: Text("Meal Categories").font(.headline)) {
+                    ForEach(categories, id: \.self) { category in
+                        NavigationLink(destination: CategoryDetailView(categoryName: category)) {
+                            HStack {
+                                Text(category)
+                                    .font(.headline)
+                                Spacer()
+                                Image(systemName: symbolForCategory(category))
+                                    .foregroundColor(.gray)
+                            }
+                            .padding()
+                        }
+                    }
+                }
             }
+            .navigationTitle("Personal Recipes")
         }
     }
-
+    
     private func symbolForCategory(_ category: String) -> String {
         switch category {
         case "Breakfast": return "cup.and.saucer"
@@ -34,6 +53,9 @@ struct RecipesListView: View {
         case "Dessert": return "staroflife"
         case "Drinks": return "wineglass"
         case "Cakes": return "birthday.cake"
+        case "Favorites": return "heart.fill"
+        case "All Recipes": return "book.fill"
+        case "Cooked": return "checkmark.circle"
         default: return "questionmark"
         }
     }
@@ -45,7 +67,7 @@ struct CategoryDetailView: View {
     @State private var recipes: [PersonalRecipe] = []
     @State private var showAlert = false
     @State private var recipeToDelete: PersonalRecipe?
-
+    
     var body: some View {
         VStack {
             Text(categoryName)
@@ -53,37 +75,46 @@ struct CategoryDetailView: View {
                 .fontWeight(.bold)
             
             List {
-                ForEach(recipes, id: \.self) { recipe in
-                    HStack {
-                        NavigationLink(destination: RecipeView(recipe: recipe)) {
-                            Text(recipe.name ?? "Untitled Recipe")
-                        }
-                        .buttonStyle(PlainButtonStyle()) // Removes the default button styling (including the > symbol)
-                        
+                if(recipes.isEmpty){
+                    HStack{
                         Spacer()
-                        
-                        Menu {
-                            Button("Edit Recipe") {
-                                editRecipe(recipe)
+                        Text("No recipes found")
+                        Spacer()
+                    }
+                    .listRowBackground(Color(UIColor.systemGroupedBackground)) // Matches the default list background color
+                }
+                else {
+                    ForEach(recipes, id: \.self) { recipe in
+                        HStack {
+                            NavigationLink(destination: RecipeView(recipe: recipe)) {
+                                Text(recipe.name ?? "Untitled Recipe")
                             }
-                            Button("Add to Favorite") {
-                                addToFavorite(recipe)
+                            .buttonStyle(PlainButtonStyle()) // Removes the default button styling (including the > symbol)
+                            
+                            Spacer()
+                            
+                            Menu {
+                                Button("Edit Recipe") {
+                                    editRecipe(recipe)
+                                }
+                                Button("Add to Favorites") {
+                                    addToFavorite(recipe)
+                                }
+                                Button("Delete Recipe", role: .destructive) {
+                                    recipeToDelete = recipe
+                                    showAlert = true
+                                }
+                            } label: {
+                                Image(systemName: "ellipsis")
+                                    .rotationEffect(.degrees(90))
+                                    .foregroundColor(.gray)
                             }
-                            Button("Delete Recipe", role: .destructive) {
-                                recipeToDelete = recipe
-                                showAlert = true
-                            }
-                           
-                        } label: {
-                            Image(systemName: "ellipsis")
-                                .rotationEffect(.degrees(90))
-                                .foregroundColor(.gray)
                         }
                     }
                 }
             }
             .onAppear {
-                fetchRecipes()
+                selectRecipesToFetch()
             }
             .alert(isPresented: $showAlert) {
                 Alert(
@@ -97,128 +128,62 @@ struct CategoryDetailView: View {
                     secondaryButton: .cancel()
                 )
             }
-
+            
             Spacer()
         }
     }
-
+    
     private func fetchRecipes() {
         recipes = RecipeManager.shared.fetchRecipes(for: categoryName)
     }
     
     private func editRecipe(_ recipe: PersonalRecipe) {
-        // TO DO: Add logic for editing recipe
+        // TODO: Add logic for editing the recipe
         print("Editing recipe: \(recipe.name ?? "Untitled")")
     }
     
     private func addToFavorite(_ recipe: PersonalRecipe) {
-        //TO DO: implement add to favorite
-        print("adding to favorite: \(recipe.name ?? "Unititled")")
+        // TODO: Implement "Add to Favorites" functionality
+        print("Adding to favorites: \(recipe.name ?? "Untitled")")
     }
-
+    
     private func deleteRecipe(_ recipe: PersonalRecipe) {
         guard let index = recipes.firstIndex(of: recipe) else { return }
         recipes.remove(at: index)
         RecipeManager.shared.deleteRecipe(recipe)
     }
+    
+    private func fetchAllRecipes() {
+        recipes = RecipeManager.shared.fetchAllRecipes()
+    }
+    
+    private func fetchFavorites() {
+        // TODO: Implement fetching favorites
+    }
+    
+    private func fetchCooked() {
+        // TODO: Implement fetching cooked meals
+    }
+    
+    private func selectRecipesToFetch() {
+        switch categoryName {
+        case "Favorites":
+            fetchFavorites()
+        case "All Recipes":
+            fetchAllRecipes()
+        case "Cooked":
+            fetchCooked()
+        default:
+            fetchRecipes()
+        }
+    }
 }
-
 
 struct RecipesListView_Previews: PreviewProvider {
     static var previews: some View {
         let context = PersistenceController.shared.container.viewContext
-        // Create mock recipes for preview
-        let mockRecipe1 = PersonalRecipe(context: context)
-        mockRecipe1.name = "Mock Recipe 1"
-        mockRecipe1.category = "Dinner"
-
-        let mockRecipe2 = PersonalRecipe(context: context)
-        mockRecipe2.name = "Mock Recipe 2"
-        mockRecipe2.category = "Dinner"
-        
         return RecipesListView()
             .environment(\.managedObjectContext, context)
     }
 }
 
-
-//import SwiftUI
-//import CoreData
-//
-//struct RecipesListView: View {
-//    let categoryName: String
-//    
-//    @State private var recipes: [PersonalRecipe] = []
-//
-//    var body: some View {
-//        VStack {
-//            Text(categoryName)
-//                .font(.title)
-//                .fontWeight(.bold)
-//            
-//            List {
-//                ForEach(recipes, id: \.self) { recipe in
-//                    HStack {
-//                        NavigationLink(destination: RecipeView(recipe: recipe)) {
-//                            Text(recipe.name ?? "Untitled Recipe")
-//                        }
-//                        Spacer()
-//                        
-//                        // Dropdown Menu for Edit/Delete
-//                        Menu {
-//                            Button("Edit Recipe") {
-//                                editRecipe(recipe)
-//                            }
-//                            Button("Delete Recipe", role: .destructive) {
-//                                deleteRecipe(recipe)
-//                            }
-//                        } label: {
-//                            Image(systemName: "ellipsis")
-//                                .rotationEffect(.degrees(90)) // Rotate to vertical
-//                                .foregroundColor(.gray)
-//                        }
-//                    }
-//                }
-//            }
-//            .onAppear {
-//                fetchRecipes()
-//            }
-//
-//            Spacer()
-//        }
-//    }
-//
-//    private func fetchRecipes() {
-//        recipes = RecipeManager.shared.fetchRecipes(for: categoryName)
-//    }
-//
-//    private func editRecipe(_ recipe: PersonalRecipe) {
-//        // Implement the logic for editing the recipe here
-//        print("Editing recipe: \(recipe.name ?? "Untitled")")
-//    }
-//
-//    private func deleteRecipe(_ recipe: PersonalRecipe) {
-//        guard let index = recipes.firstIndex(of: recipe) else { return }
-//        recipes.remove(at: index)
-//        RecipeManager.shared.deleteRecipe(recipe)
-//    }
-//}
-//
-//struct RecipesListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let context = PersistenceController.shared.container.viewContext
-//        
-//        // Create mock recipes for preview
-//        let mockRecipe1 = PersonalRecipe(context: context)
-//        mockRecipe1.name = "Mock Recipe 1"
-//        mockRecipe1.category = "Dinner"
-//
-//        let mockRecipe2 = PersonalRecipe(context: context)
-//        mockRecipe2.name = "Mock Recipe 2"
-//        mockRecipe2.category = "Dinner"
-//
-//        // Inject the category name
-//        return RecipesListView(categoryName: "Dinner")
-//            .environment(\.managedObjectContext, context)
-//    }
-//}
