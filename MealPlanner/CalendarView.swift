@@ -32,7 +32,7 @@ struct CalendarView: View {
                             }
                         }
                     }
-                    .frame(maxHeight: 150) 
+                    .frame(maxHeight: 150)
                 }
                 //.padding()
                 //.background(Color(UIColor.systemGray5))
