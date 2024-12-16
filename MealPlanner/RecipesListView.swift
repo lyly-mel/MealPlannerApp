@@ -3,7 +3,7 @@ import SwiftUI
 import CoreData
 
 struct RecipesListView: View {
-    let categories = ["Breakfast", "Lunch", "Dinner", "Dessert", "Drinks", "Cakes", "Others"]
+    let categories = ["Breakfast", "Lunch", "Dinner", "Dessert", "Drink", "Cake", "Other"]
     let diverseCategories = ["Favorites", "All Recipes", "Cooked"]
     
     var body: some View {
@@ -51,8 +51,8 @@ struct RecipesListView: View {
         case "Lunch": return "fork.knife"
         case "Dinner": return "fork.knife"
         case "Dessert": return "staroflife"
-        case "Drinks": return "wineglass"
-        case "Cakes": return "birthday.cake"
+        case "Drink": return "wineglass"
+        case "Cake": return "birthday.cake"
         case "Favorites": return "heart.fill"
         case "All Recipes": return "book.fill"
         case "Cooked": return "checkmark.circle"
