@@ -28,18 +28,6 @@ FSCalendar: Calendar integration to visually represent planned days.
 Xcode: Developed and tested using Xcode.
 Swift: Primary programming language.
 
-📸 Screenshots
-Welcome View  Calendar View	
-<img width="372" alt="Screenshot 2024-12-17 at 1 57 09 PM" src="https://github.com/user-attachments/assets/de4a8632-7591-4d84-a246-bfd6391b11bd" />  <img width="354" alt="Screenshot 2024-12-17 at 2 24 24 PM" src="https://github.com/user-attachments/assets/ce105b38-e2f9-4ed2-bf65-117cdba73460" />  
-
-Home View
-
-
-
-<img width="385" alt="Screenshot 2024-12-17 at 2 24 50 PM" src="https://github.com/user-attachments/assets/9282063e-45bd-4126-997c-640bbb4c14f2" />
-
-Grocery List
-<img width="382" alt="Screenshot 2024-12-17 at 2 25 02 PM" src="https://github.com/user-attachments/assets/279e5e3c-6c7b-40bf-ba47-29d2ec7c26d6" />
 📂 App Structure
 
 The app follows a modular structure with key components:
