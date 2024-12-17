@@ -23,7 +23,7 @@ struct MainTabView: View {
             
             // Groceries Tab
             GroceriesView()
-                .badge(1)
+                //.badge(1)
                 .tabItem {
                     Image(systemName: "cart")
                     Text("Groceries")
