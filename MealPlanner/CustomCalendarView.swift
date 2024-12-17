@@ -9,9 +9,9 @@ import SwiftUI
 import FSCalendar
 
 struct CustomCalendar: View {
-    @Binding var selectedDate: Date // Selected date binding
-    var mealPlans: [String: [String]] // Meal plans dictionary
-    var onDateSelected: ((Date) -> Void)? // Callback for date selection
+    @Binding var selectedDate: Date
+    @State private var mealPlans: [String: [String]] = [:] // Meal plans fetched from Core Data
+    var onDateSelected: ((Date) -> Void)? 
 
     var body: some View {
         VStack {
@@ -26,6 +26,35 @@ struct CustomCalendar: View {
             .frame(height: 350)
             .padding()
         }
+        .onAppear(perform: fetchMealPlans)
+    }
+
+    // Fetch meal plans from Core Data
+    private func fetchMealPlans() {
+        var tempMealPlans: [String: [String]] = [:]
+        let plans = PlanManager.shared.fetchAllPlans()
+
+        for plan in plans {
+            let days = PlanManager.shared.fetchDays(for: plan)
+
+            for day in days {
+                let meals = PlanManager.shared.fetchMeals(for: day)
+                let formattedDate = formatDate(day.date ?? Date())
+
+                if !meals.isEmpty {
+                    tempMealPlans[formattedDate] = meals.flatMap { meal in
+                        (meal.recipes as? Set<PersonalRecipe>)?.compactMap { $0.name } ?? []
+                    }
+                }
+            }
+        }
+        mealPlans = tempMealPlans
+    }
+
+    private func formatDate(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string(from: date)
     }
 }
 
@@ -75,12 +104,12 @@ struct FSCalendarWrapper: UIViewRepresentable {
 
         func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
             let formattedDate = formatDate(date)
-            return mealPlans[formattedDate] != nil ? 1 : 0
+            return mealPlans[formattedDate]?.isEmpty == false ? 1 : 0
         }
 
         func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]? {
             let formattedDate = formatDate(date)
-            return mealPlans[formattedDate] != nil ? [.systemGreen] : nil
+            return mealPlans[formattedDate]?.isEmpty == false ? [.systemGreen] : nil
         }
 
         private func formatDate(_ date: Date) -> String {
@@ -91,10 +120,9 @@ struct FSCalendarWrapper: UIViewRepresentable {
     }
 }
 
-//struct CustomCalendar_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CustomCalendar()
-//    }
-//}
+
+
+
+
 
 

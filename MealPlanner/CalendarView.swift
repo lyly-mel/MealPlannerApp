@@ -1,11 +1,9 @@
+
 import SwiftUI
 
 struct CalendarView: View {
     @State private var selectedDate: Date = Date()
-    @State private var mealPlans: [String: [String]] = [
-        "2024-12-14": ["Pancakes", "Grilled Chicken Salad", "Soup", "Bread", "Rice", "Pizza", "Salad", "Dessert","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A"],
-        "2024-12-15": ["Spaghetti Bolognese"]
-    ]
+    @State private var mealPlans: [String: [String]] = [:]
     @State private var showingMealsForToday: Bool = true
 
     var body: some View {
@@ -14,6 +12,7 @@ struct CalendarView: View {
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding()
+
             // Meals for Selected Day
             if let meals = mealPlans[formattedDate(selectedDate)], !meals.isEmpty {
                 DisclosureGroup("Planned Meals (\(meals.count))") {
@@ -31,8 +30,6 @@ struct CalendarView: View {
                     }
                     .frame(maxHeight: 150)
                 }
-                //.padding()
-                //.background(Color(UIColor.systemGray5))
                 .cornerRadius(6)
                 .padding(.horizontal)
             } else {
@@ -40,8 +37,8 @@ struct CalendarView: View {
                     .foregroundColor(.gray)
                     .padding(.horizontal)
             }
-            
-            // Calendar View (Static Height)
+
+            // Calendar View 
             FSCalendarWrapper(
                 selectedDate: $selectedDate,
                 mealPlans: mealPlans,
@@ -54,6 +51,28 @@ struct CalendarView: View {
             .padding()
         }
         .navigationTitle("Meal Planner")
+        .onAppear(perform: fetchMealPlans)
+    }
+
+    private func fetchMealPlans() {
+        var plans = PlanManager.shared.fetchAllPlans()
+        var tempMealPlans: [String: [String]] = [:]
+
+        for plan in plans {
+            let days = PlanManager.shared.fetchDays(for: plan)
+
+            for day in days {
+                let meals = PlanManager.shared.fetchMeals(for: day)
+                let formattedDate = formattedDate(day.date ?? Date())
+
+                if !meals.isEmpty {
+                    tempMealPlans[formattedDate] = meals.flatMap { meal in
+                        (meal.recipes as? Set<PersonalRecipe>)?.compactMap { $0.name } ?? []
+                    }
+                }
+            }
+        }
+        mealPlans = tempMealPlans
     }
 
     private func formattedDate(_ date: Date) -> String {
@@ -61,12 +80,11 @@ struct CalendarView: View {
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter.string(from: date)
     }
-    
-    // Utility to check if two dates are the same
-        private func isSameDay(date1: Date, date2: Date) -> Bool {
-            let calendar = Calendar.current
-            return calendar.isDate(date1, inSameDayAs: date2)
-        }
+
+    private func isSameDay(date1: Date, date2: Date) -> Bool {
+        let calendar = Calendar.current
+        return calendar.isDate(date1, inSameDayAs: date2)
+    }
 }
 
 struct CalendarView_Previews: PreviewProvider {
@@ -74,4 +92,9 @@ struct CalendarView_Previews: PreviewProvider {
         CalendarView()
     }
 }
+
+
+
+
+
 

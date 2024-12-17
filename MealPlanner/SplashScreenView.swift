@@ -8,7 +8,6 @@ struct SplashScreenView: View {
     
     var body: some View {
         if isActive {
-            // Move to ContentView after the splash screen
             ContentView()
         } else {
             VStack {

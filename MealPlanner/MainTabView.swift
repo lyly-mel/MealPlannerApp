@@ -38,13 +38,13 @@ struct MainTabView: View {
                 }
                 .tag(3)
             
-            // Setting Tab
-            SettingsView()
-                .tabItem {
-                    Image(systemName: "gearshape.fill")
-                    Text("Setting")
-                }
-                .tag(4)
+            //TODO: implement sittings
+//            SettingsView()
+//                .tabItem {
+//                    Image(systemName: "gearshape.fill")
+//                    Text("Setting")
+//                }
+//                .tag(4)
         }
         .accentColor(.green)
         .navigationBarBackButtonHidden(true)

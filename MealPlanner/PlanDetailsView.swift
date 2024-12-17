@@ -28,10 +28,13 @@ struct PlanDetailsView: View {
                                 ForEach(meals.sorted(by: { $0.name ?? "" < $1.name ?? "" }), id: \.self) { meal in
                                     DisclosureGroup("\(meal.name ?? "Unnamed Meal")") {
                                         if let recipes = meal.recipes as? Set<PersonalRecipe> {
-                                            ForEach(recipes.sorted(by: { $0.name ?? "" < $1.name ?? "" }), id: \.self) { recipe in
-                                                Text("- \(recipe.name ?? "Unnamed Recipe")")
-                                                    .font(.footnote)
-                                                    .foregroundColor(.gray)
+                                            ForEach(recipes.sorted(by: {
+                                                $0.name ?? "" < $1.name ?? "" }), id: \.self) { recipe in
+                                                    NavigationLink(destination: RecipeView(recipe: recipe)) {
+                                                        Text("- \(recipe.name ?? "Unnamed Recipe")")
+                                                            .foregroundColor(.black)
+                                                    }
+                                               
                                             }
                                         }
                                     }

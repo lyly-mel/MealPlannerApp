@@ -9,7 +9,6 @@ struct RecipesListView: View {
     var body: some View {
         NavigationView {
             List {
-                // Diverse Categories
                 Section(header: Text("Diverse Categories").font(.headline)) {
                     ForEach(diverseCategories, id: \.self) { diverseCategory in
                         NavigationLink(destination: CategoryDetailView(categoryName: diverseCategory)) {
@@ -158,7 +157,7 @@ struct CategoryDetailView: View {
     }
     
     private func fetchFavorites() {
-        // TODO: Implement fetching favorites
+        //TODO: Implement fetching favorites
     }
     
     private func fetchCooked() {

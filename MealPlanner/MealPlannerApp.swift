@@ -16,8 +16,6 @@ struct MealPlannerApp: App {
         WindowGroup {
             SplashScreenView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-
-
         }
     }
 }

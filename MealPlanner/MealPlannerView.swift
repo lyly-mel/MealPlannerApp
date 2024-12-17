@@ -39,7 +39,7 @@ struct MealPlannerView: View {
                     .sheet(isPresented: $isCalendarPresented) {
                         CustomCalendar(
                             selectedDate: $selectedDate,
-                            mealPlans: mealPlans,
+                            //mealPlans: mealPlans,
                             onDateSelected: { date in
                                 isCalendarPresented = false
                                 selectedRecipes = selectedRecipesForDay[date] ?? [] // Restore previous selection
@@ -142,8 +142,6 @@ struct MealPlannerView: View {
             .onAppear(perform: fetchRecipes) // Fetch recipes when the view appears
         }
     }
-
-    // MARK: - CoreData Integration with PlanManager
 
     private func fetchRecipes() {
         recipes = RecipeManager.shared.fetchAllRecipes()

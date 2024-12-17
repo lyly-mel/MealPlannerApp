@@ -27,6 +27,7 @@
 		A195679A2D0F06DA00529F15 /* PlanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19567992D0F06DA00529F15 /* PlanManager.swift */; };
 		A195679C2D0F23B500529F15 /* CustomCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195679B2D0F23B500529F15 /* CustomCalendarView.swift */; };
 		A195679E2D10632800529F15 /* PlanDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195679D2D10632800529F15 /* PlanDetailsView.swift */; };
+		A19567A02D12245B00529F15 /* TestGrocerie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A195679F2D12245B00529F15 /* TestGrocerie.swift */; };
 		A198F2872CF827100087D687 /* CreateRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A198F2862CF827100087D687 /* CreateRecipeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		A19567992D0F06DA00529F15 /* PlanManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanManager.swift; sourceTree = "<group>"; };
 		A195679B2D0F23B500529F15 /* CustomCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarView.swift; sourceTree = "<group>"; };
 		A195679D2D10632800529F15 /* PlanDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDetailsView.swift; sourceTree = "<group>"; };
+		A195679F2D12245B00529F15 /* TestGrocerie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGrocerie.swift; sourceTree = "<group>"; };
 		A198F2862CF827100087D687 /* CreateRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 				A195679D2D10632800529F15 /* PlanDetailsView.swift */,
 				A123C1112CF4648D006BCD96 /* Assets.xcassets */,
 				A123C1132CF4648D006BCD96 /* Preview Content */,
+				A195679F2D12245B00529F15 /* TestGrocerie.swift */,
 			);
 			path = MealPlanner;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A19567A02D12245B00529F15 /* TestGrocerie.swift in Sources */,
 				A195679E2D10632800529F15 /* PlanDetailsView.swift in Sources */,
 				A193AA122CF5CFBD00CBBF3A /* GroceriesView.swift in Sources */,
 				A181ECF32D0C38070070AD07 /* PersonalRecipeModel.xcdatamodeld in Sources */,
