@@ -46,9 +46,8 @@ Managers:
   
 📥 How to Run the App
 
-Clone the Repository:
-git clone https://github.com/your-username/meal-planner-app.git
-Open in Xcode:
+Clone the Repository.
+Open it in Xcode
 Open the .xcodeproj or .xcworkspace file.
 Install Dependencies (if using Swift Package Manager):
 Ensure FSCalendar is properly installed.
